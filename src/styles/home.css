@@ -1,0 +1,69 @@
+.container-home {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
+  row-gap: 100px;
+}
+
+.container-button {
+  display: grid;
+  grid-template-columns: repeat(5, 150px);
+  justify-content: center;
+  align-items: center;
+  gap: 10px 20px;
+}
+
+.action-buttons {
+  display: flex;
+  column-gap: 20px;
+}
+
+.link {
+  border: 2px solid #99995a;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+.link:hover {
+  font-size: 20px;
+  border: none;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in;
+}
+
+.poke-link {
+  text-decoration: none;
+  color: #99995a;
+}
+
+.button-action {
+  font-size: 50px;
+  background: none;
+  color: darkcyan;
+  border: none;
+  cursor: pointer;
+}
+
+.button-action:hover {
+  animation-name: next;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.button-action:disabled {
+  color: rgb(105, 103, 103);
+  animation: none;
+}
+
+@keyframes next {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(30px);
+  }
+}
