@@ -1,12 +1,13 @@
 import React from "react";
 import { getPokemon } from "../services/pokemonData";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { useQuery } from "react-query";
 import "../styles/view.css";
 import handImage from "../assets/hand-ball-poke.jpg";
 
 const View = () => {
   const { name } = useParams();
+  const navigate = useNavigate();
   const query = useQuery(["pokemon", name], () => getPokemon(name), {
     onSuccess: (data) => {
       console.log(data);
@@ -27,6 +28,14 @@ const View = () => {
     } = query.data;
     return (
       <div className="container">
+        <div style={{ display: "flex", alignSelf: "start" }}>
+          <Link className="go-home" onClick={() => navigate(-1)}>
+            &lt; Retour
+          </Link>
+          <Link className="go-home" to={"/"}>
+            Go Home
+          </Link>
+        </div>
         <div className="card">
           <div className="card-header">
             <img src={image} />
